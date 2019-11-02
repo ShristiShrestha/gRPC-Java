@@ -2,7 +2,7 @@ package SMS;
 
 import java.util.Date;
 
-public class smsClass {
+public class SmsClass {
     String sender;
     String receiver;
     String message;

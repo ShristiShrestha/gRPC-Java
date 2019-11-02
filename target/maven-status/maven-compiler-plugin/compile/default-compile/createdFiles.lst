@@ -4,12 +4,12 @@ com\grpc\SMS\grpcSMSGrpc$grpcSMSStub.class
 com\grpc\SMS\grpcSMSGrpc$1.class
 com\grpc\SMS\grpcSMSGrpc$grpcSMSFutureStub.class
 com\grpc\SMS\grpcSMSGrpc$grpcSMSBaseDescriptorSupplier.class
+SMS\SmsClass.class
 com\grpc\iplocation\ipToLocationGrpc$ipToLocationMethodDescriptorSupplier.class
 com\grpc\SMS\SendSMS$SmsResponse$Builder.class
 com\grpc\SMS\grpcSMSGrpc$grpcSMSFileDescriptorSupplier.class
 com\grpc\iplocation\ipToLocationGrpc$ipToLocationBaseDescriptorSupplier.class
 com\grpc\iplocation\IpToLocation$IpLocationResponseOrBuilder.class
-SMS\smsClass.class
 com\grpc\SMS\SendSMS$SmsRequestOrBuilder.class
 com\grpc\iplocation\ipToLocationGrpc$ipToLocationBlockingStub.class
 com\grpc\iplocation\IpToLocation$1.class
