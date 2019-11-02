@@ -1,0 +1,22 @@
+syntax ="proto3";
+
+option java_package = "com.grpc.iplocation";
+
+service ipToLocation{
+    rpc getMyLocationFromIp(IpLocationRequest) returns (IpLocationResponse);
+}
+
+message IpLocationRequest{
+    string ip = 1;
+}
+
+message IpLocationResponse{
+    string ip = 1;
+    string type = 2;
+    string continent_name = 3;
+    string country_name = 4;
+    string latitude = 5;
+    string longitude = 6;
+    int32 response_code = 7;
+
+}
