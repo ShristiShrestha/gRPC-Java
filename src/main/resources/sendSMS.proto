@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+option java_package = "com.grpc.SMS";
+
+service grpcSMS{
+    rpc sendSMS(SmsRequest) returns (SmsResponse);
+}
+
+message SmsRequest{
+    string senderNumber = 1;
+    string receiverNumber= 2;
+    string message = 3;
+
+}
+
+message SmsResponse{
+    string responseMessage =1;
+    int32 responseCode =2;
+    string receiverNumber = 3;
+}
