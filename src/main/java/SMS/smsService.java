@@ -37,43 +37,11 @@ public class smsService extends grpcSMSGrpc.grpcSMSImplBase {
                 new PhoneNumber("+12568889325"), // from
                 smsClass.getMessage()).create(); // message
 
-        System.out.println(message.getSid());
+        System.out.println("\n sms sent id: "+ message.getSid());
         response.setReceiverNumber(smsClass.getReceiver()).setResponseCode(0).setResponseMessage("Message has been delivered as: " + smsClass.getMessage());
 
         responseObserver.onNext(response.build()); // send response data back to the client
         responseObserver.onCompleted();
-
-        /*
-        // send message using MessageBird API
-
-        // Create a MessageBirdService
-        final MessageBirdService messageBirdService = new MessageBirdServiceImpl(messageBirdAPI);
-
-        // Add the service to the client
-        final MessageBirdClient messageBirdClient = new MessageBirdClient(messageBirdService);
-
-        // convert String number into acceptable format
-        BigInteger phoneNumber = new BigInteger(smsClass.getReceiver()); // pass receiver number string
-        final List<BigInteger> phones = new ArrayList<BigInteger>();
-        phones.add(phoneNumber);
-
-        // create response object sent from grpc server i.e. build rpc/api response whether or not ip is validated
-        SendSMS.SmsResponse.Builder response = SendSMS.SmsResponse.newBuilder();
-
-        try {
-            final MessageResponse smsResponse = messageBirdClient.sendMessage("", smsClass.getMessage() + "\n Sent by " + smsClass.getSender(), phones);
-            System.out.println("\n SMS response: " + smsResponse.toString());
-
-            response.setReceiverNumber(smsClass.getReceiver()).setResponseCode(0).setResponseMessage("Message has been delivered as: " + smsClass.getMessage());
-
-        } catch (UnauthorizedException | GeneralException ex) {
-            System.out.println(ex.toString());
-        }
-
-        responseObserver.onNext(response.build()); // send response data back to the client
-        responseObserver.onCompleted();
-
-        */
 
     }
 

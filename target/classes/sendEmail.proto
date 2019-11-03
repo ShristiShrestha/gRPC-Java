@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+option java_package = "com.grpc.Email";
+
+service grpcEmail{
+    rpc sendEmail(EmailRequest) returns(EmailResponse);
+}
+
+message EmailRequest{
+    string to = 1;
+    string from = 2;
+    string subject = 3;
+    string message = 4;
+    string filePath = 5;
+}
+
+message EmailResponse{
+    int32 responseCode = 1;
+    string responseMessage =2;
+    string to = 3;
+    string from = 4;
+    string subject = 5;
+    string message = 6;
+
+}
